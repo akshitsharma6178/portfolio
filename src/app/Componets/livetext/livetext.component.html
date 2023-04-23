@@ -1,0 +1,1 @@
+<span class="indexFix" [ngClass]="{'dark-color': !darkMode}" [@openClose]="addTrigger(i)" (mouseover)="mouseEvent('in',i)" (mouseout)="mouseEvent('out',i)" *ngFor="let char of string.split(''); index as i">{{char}}</span>

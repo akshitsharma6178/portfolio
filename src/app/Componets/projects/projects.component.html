@@ -1,0 +1,117 @@
+<div class="main-body">
+    <div class="about-title">
+        <app-livetext [string]="string" class="about-title"></app-livetext>
+    </div>
+    <div [ngClass]="{'decorator-dark': darkMode, 'decorator-light': !darkMode}"></div>
+    <div class="content">
+        <div id="projects" class="pro"></div>
+        <div (mouseenter)="setHover(true);" (mouseleave)="setHover(false);" id="wrapper">
+            <div (mouseenter)="hover1=true" (mouseleave)="hover1=false" (click)="expand(1)" class="shape" [ngClass]="{'full': expanded[1], 'light' : !darkMode}">
+                <div  [@inOutAnimation] *ngIf="expanded[1]" class="data">
+                    <img class="image" src="../../../assets/images/manyata.png" alt="">
+                    <div class="divider"></div>
+                    <div class="desc-body">
+                        <div class="data-heading">{{projectList[0]}}</div>
+                        <div class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[0]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+                <!-- <div *ngIf="!expanded[1] && hover1" class="hoverText">
+                    <span class="textHover">M</span>
+                </div> -->
+            </div>
+            <div (click)="expand(2)" class="shape" [ngClass]="{'full': expanded[2], 'light' : !darkMode}">
+                <div [@inOutAnimation] *ngIf="expanded[2]" class="data">
+                    <img class="image" src="../../../assets/images/washbat.png" alt="">
+                    <div class="divider"></div>
+                    <div class="desc-body">
+                        <div class="data-heading">{{projectList[1]}}</div>
+                        <div class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[1]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div (click)="expand(3)" class="shape" [ngClass]="{'full': expanded[3], 'light' : !darkMode}">
+                <div [@inOutAnimation] *ngIf="expanded[3]" class="data">
+                    <img class="image" src="../../../assets/images/trilingo.png" alt="">
+                    <div class="divider"></div>
+                    <div class="desc-body">
+                        <div class="data-heading">{{projectList[2]}}</div>
+                        <div class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[2]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div (click)="expand(4)" class="shape" [ngClass]="{'full': expanded[4], 'light' : !darkMode}">
+                <div [@inOutAnimation] *ngIf="expanded[4]" class="data">
+                    <img class="image" src="../../../assets/images/portfolio.jpg" alt="">
+                    <div class="divider"></div>
+                    <div style="color: black;" class="desc-body">
+                        <div class="data-heading">{{projectList[3]}}</div>
+                        <div class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[3]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div (click)="expand(5)" class="shape" [ngClass]="{'full': expanded[5], 'light' : !darkMode}">
+                <div [@inOutAnimation] *ngIf="expanded[5]" class="data">
+                    <img class="image" src="../../../assets/images/blog.jpg" alt="">
+                    <div class="divider"></div>
+                    <div class="desc-body">
+                        <div class="data-heading">{{projectList[4]}}</div>
+                        <div class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[4]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div (click)="expand(6)" class="shape" [ngClass]="{'full': expanded[6], 'light' : !darkMode}">
+                <div [@inOutAnimation] *ngIf="expanded[6]" class="data">
+                    <img class="image" src="../../../assets/images/ai.jpg" alt="">
+                    <div class="divider"></div>
+                    <div class="desc-body">
+                        <div style="color: black;" class="data-heading">{{projectList[5]}}</div>
+                        <div style="color: black;"  class="data-desc">
+                            <ul class="u-list">
+                              <li *ngFor="let point of projectDisc[projectList[5]]; index as i">{{ point }}</li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- <canvas id="projects"></canvas> -->
+    <!-- <div class="projects"> -->
+        <!-- <mat-card [@openClose]="addTrigger(y)" (mouseover)="mouseEvent('in',y)" class="project" (mouseout)="mouseEvent('out',y)"  (click)="drawer.toggle()" *ngFor="let i of projectList; let y = index"> -->
+        <!-- <mat-card class="project" (mouseout)="mouseEvent('out',y)" (click)="drawer.toggle()" *ngFor="let i of projectList; let y = index">
+            <mat-drawer-container class="sidenav-container card">
+                <mat-drawer #drawer class="sidenav" mode="side">
+                        <section class="new">
+                            <p class="about-body">
+                                {{projectDisc[i]}}    
+                            </p>
+                            <button mat-button (click)="liveView()"><mat-icon class="hamburger" >launch</mat-icon></button>
+                        </section>
+                </mat-drawer>
+                <div class="img-set">
+                    <img class="lan-img"  src="../../../assets/images/{{i}}.png" alt="">
+                </div>
+            </mat-drawer-container>
+        </mat-card>
+    </div> -->
+</div>

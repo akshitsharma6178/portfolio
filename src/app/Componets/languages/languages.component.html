@@ -1,0 +1,34 @@
+<div class="main-body">
+    <div class="about-title">
+        <app-livetext [string]="string" class="about-title"></app-livetext>
+    </div>
+    <div [ngClass]="{'decorator-dark': darkMode, 'decorator-light': !darkMode}"></div>
+    <div class="images">
+        <mat-card  id="{{y}}" (mouseover)="isMobile() ? drawer.toggle() : null" (mouseout)="isMobile() ? drawer.toggle() : null" (click)="!isMobile() ? drawer.toggle() : null" class="card" [ngClass]="{'caresol': smallerSize(y), 'last' : lastItem(y), 'second-last': secondLast(y),'shadow': !darkMode}" *ngFor="let i of languageListShown; let y = index">
+            <mat-drawer-container class="sidenav-container" [ngClass]="{'caresol': smallerSize(y)}" autosize>
+                <mat-drawer #drawer class="sidenav" mode="side">
+                        <p class="lanDesc">
+                            {{languageDisc[i]}}
+                        </p>
+                </mat-drawer>
+                <div class="img-set mat-app-background" [ngClass]="{'caresol': smallerSize(y)}">
+                    <img *ngIf="(i != 'firebase') && (i != 'flutter')" [ngClass]="{'lan-img-dark': darkMode, 'lan-img-light': !darkMode}"  src="../../../assets/images/{{i}}.png" alt="" width="100px">
+                    <img *ngIf="darkMode && (i == 'firebase')" [ngClass]="{'lan-img-dark': darkMode, 'lan-img-light': !darkMode}"  src="../../../assets/images/{{i}}-dark.png" alt="" width="100px">
+                    <img *ngIf="!darkMode && (i == 'firebase')" [ngClass]="{'lan-img-dark': darkMode, 'lan-img-light': !darkMode}"  src="../../../assets/images/{{i}}-light.png" alt="" width="100px">
+                    <img *ngIf="darkMode && (i == 'flutter')" [ngClass]="{'lan-img-dark': darkMode, 'lan-img-light': !darkMode}"  src="../../../assets/images/{{i}}-dark.png" alt="" width="100px">
+                    <img *ngIf="!darkMode && (i == 'flutter')" [ngClass]="{'lan-img-dark': darkMode, 'lan-img-light': !darkMode}"  src="../../../assets/images/{{i}}-light.png" alt="" width="100px">
+                </div>
+            </mat-drawer-container>
+        </mat-card>
+    </div>
+    <div class="break"></div>
+    <div class="buton-next-prev">
+        <div>
+            <button class="btn" mat-button (click)="previousSet()"><mat-icon>keyboard_arrow_left</mat-icon></button>
+        </div>
+        <div>
+            <button class="btn" mat-button (click)="nextSet()"><mat-icon>keyboard_arrow_right</mat-icon></button>
+        </div>
+    </div>
+    <!-- <mat-icon style="color: blue;" svgIcon="android" class="iconPara" aria-hidden="false"></mat-icon> -->
+</div>

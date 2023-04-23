@@ -1,0 +1,299 @@
+// $style: var(--style);
+:host {
+    margin: auto;
+}
+
+.main-body{
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 0px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    perspective: 40px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vh;
+}
+.image{
+     width: 100%;
+    // max-width: 400px; 
+     max-height: 386px;
+    height: auto;
+     margin: auto;
+    //  margin-left: 12vw;
+    align-self: center;
+    object-fit: contain;
+    border-radius: 25px; 
+    // max-height: 183vh;
+    // height: auto;s
+    // margin-left: 18vw;
+    align-self: center;
+    object-fit: contain;
+    align-self: flex-start;
+    border-radius: 25px;
+    opacity: 1 !important;
+    filter: grayscale(0%);
+    // transform: $style;
+    // -webkit-transform: $style;
+    // -moz-transform: $style;
+    // -ms-transform: $style;
+    // -o-transform: $style;
+
+    //  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    // mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-filter: drop-shadow(1px 1px 0 black)
+                    drop-shadow(-1px -1px 0 black);
+    filter: drop-shadow(1px 1px 0 black) 
+            drop-shadow(-1px -1px 0 black)
+}
+
+//  .img-hover{
+//     -webkit-mask-image:none;
+//     mask-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+// } 
+
+.desc{
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.avatar-dark{
+    border-radius: 25vmax;
+    border: black 5px;
+    // background-image: radial-gradient(
+    //     rgba(2255, 255, 255, 0.6) 9%,
+    //     transparent 9%
+    // );
+    background-image: 
+    linear-gradient(black, black),
+    url(https://cdn.mos.cms.futurecdn.net/sdSHp2akMYc4EoZAoRE77k-1200-80.jpg.webp);
+    background-position: 0% 0%;
+    width: 100%;
+    max-width: 550px;
+    background-blend-mode: saturation;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 70%, transparent 100%);
+    // box-shadow: 50px;
+    box-shadow: 0 0 8px 8px grey inset;
+    perspective: 40px;
+    transition: transform 0.5s;
+    // filter: grayscale(100%);
+    // background-size: 12vmin 12vmin;
+    // position: fixed;
+    // opacity: 0.5;
+}
+
+.avatar-light{
+    border-radius: 25vmax;
+    border: black 5px;
+    // background-image: radial-gradient(
+    //     rgba(2255, 255, 255, 0.6) 9%,
+    //     transparent 9%
+    // );
+    background-image: 
+    // linear-gradient(black, black),
+    url(https://cdn.mos.cms.futurecdn.net/sdSHp2akMYc4EoZAoRE77k-1200-80.jpg.webp);
+    background-position: 0% 0%;
+    width: 100%;
+    max-width: 550px;
+    background-blend-mode: saturation;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0) 70%, transparent 100%);
+    // box-shadow: 50px;
+    box-shadow: 0 0 8px 8px grey inset;
+    perspective: 40px;
+    transition: transform 0.5s;
+    // filter: grayscale(100%);
+    // background-size: 12vmin 12vmin;
+    // position: fixed;
+    // opacity: 0.5;
+}
+
+// .avatar::before{
+//     content: "";
+//     position: absolute;
+//     top: 0px;
+//     right: 0px;
+//     bottom: 0px;
+//     left: 0px;
+//     background-color: rgba(0,0,0,0.25);
+// }
+
+.salutation{
+    font-family: Noto Sans;
+    font-size: 2.5vw;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    // color: #000;
+}
+
+.name{
+    font-family: Noto Sans;
+    font-size: 4vw;
+    font-weight: 600;
+    transform: translate(-50%,-50%);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    transition: transform 0.5s ease-in-out;
+    // color: #0100c8;
+    // opacity: 1 !important;
+    // color: #000;
+}
+
+.name-light{
+    color:  #0100c8;
+}
+
+.decorator-light{
+    background-color:  #0100c8 !important;
+}
+
+
+.name:hover {
+    transform: translateY(0);
+}
+
+@keyframes shake{
+    0%{
+      transform: translateX(0)
+    }
+    25%{
+      transform: translateX(25px);
+    }
+      
+    50%{
+      transform: translateX(-25px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+  }
+
+.desc{
+    font-family: Noto Sans;
+    font-size: 1vw;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    // color: #000;
+}
+.name{
+    font-size: 2.5vw;
+    font-weight: bold;
+}
+.about{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.text-background {
+    margin: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: rotate(300deg);
+    -webkit-transform: rotate(300deg);
+    color: #c6afaf;
+}
+
+.decoration{
+    background-color: #d9d9d9;
+    // background-color:  #0100c8;
+    width: 170px;
+    height: 13px;
+    margin-bottom: 3vh;
+}
+
+
+.desc-body{
+    padding-top: 4vh;
+}
+
+
+@media screen and (max-width:1505px) {
+    .name{
+        font-size: 40px;
+    }
+    .salutation{
+        font-size: 40px;
+    }
+    .desc{
+        font-size: 25px;
+    }
+    .desc-body{
+        padding-top: 1vh;
+    }
+    .image{
+        margin: auto;
+    }
+    .decoration{
+        margin-top: 4vh;
+    }
+//     .main-body{
+        // padding-top: 24vh;
+//     }
+}
+
+/* @media screen and (max-width:600px) {
+    .decoration{
+        margin: auto;
+        margin-top: 4vh;
+        margin-bottom: 3vh;
+        margin-left: 20vw;
+    }
+} */
+@media screen and (max-width:522px) {
+    .about{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0px;
+    }
+    .desc-body{
+        text-align: center;
+    }
+    .name{
+        font-size: 35px;
+    }
+    .desc{
+        font-size: 35px;
+    }
+    .salutation{
+        margin: auto;
+        font-size: 35px;
+    }
+    .image{
+        align-self: center;
+        margin-left: auto;
+    }
+    // .main-body{
+    //     padding-top: 24vh;
+    // }
+}
+
+@media screen and (max-width:469px) {
+    .name{
+        font-size: 25px;
+    }
+    .salutation{
+        font-size: 25px;
+    }
+    .desc{
+        font-size: 20px;
+    }
+    // .main-body{
+    //     padding-top: 24vh;
+    // }
+}

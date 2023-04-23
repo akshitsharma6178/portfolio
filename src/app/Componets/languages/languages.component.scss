@@ -1,0 +1,211 @@
+
+:host{
+    margin: auto;
+}
+
+.about-title{
+    font-family: Noto Sans;
+    font-size: 60px;
+    // font-weight: 200;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.decorator-dark{
+    width:170px;
+    height:13px;
+    background-color: #d9d9d9;
+    align-self: center;
+    margin: auto;
+    margin-bottom: 6px;
+    transition: transform 150ms;
+}
+.decorator-light{
+    width:170px;
+    height:13px;
+    background-color: #0100c8;
+    align-self: center;
+    margin: auto;
+    margin-bottom: 6px;
+    transition: transform 150ms;
+}
+.main-body{
+    padding-left: 50px;
+    margin: auto;
+    padding-right: 50px;
+    padding-bottom: 150px;
+}
+.images{
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    padding-top: 10vh;
+    width: 100%;
+    object-fit: contain;
+    justify-content: center;
+    background: none;
+    
+}
+.card{
+    align-items: center;
+    // object-fit: contain;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: space-evenly;
+    width: 100%;
+    height: 231px;
+    max-width: 569px;
+    margin-left: auto;
+    // object-fit: contain;
+    margin: 0 0 10px 10px;
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Flovepik.com%2Fimage-400133155%2Fbackground-of-scientific-and-technological-line.html&psig=AOvVaw0F3JbkUalXKgE9uLUaApkE&ust=1665877560269000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNCsptPz4PoCFQAAAAAdAAAAABAF);
+}
+
+
+
+.mat-drawer-inner-container{
+    overflow-x: hidden!important;
+}
+.lan-img-light{
+    margin: auto;
+    align-self: center;
+    max-height: 200px;
+    object-fit: scale-down;
+    // background: none;
+    background-color: white;
+    width: 100vw;
+}
+.lan-img-dark{
+    margin: auto;
+    align-self: center;
+    max-height: 200px;
+    object-fit: scale-down;
+    background-color: #232323;
+    width: 100vw;
+}
+.buton-next-prev{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-content: center;
+}
+.btn{
+    justify-content: center;
+    align-self: center;
+    border-radius: 25px;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+.sidenav-container {
+    width: 100%;
+    /* height: 26vh; */
+    align-content: center;
+    height: 231px;
+    background: none;
+    align-items: center;
+    // object-fit: contain;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-content: space-evenly;
+    overflow-x: hidden;
+    // background-color: white;
+}
+.img-set{
+    display: flex;
+    align-items: center;
+    object-fit: contain;
+    width: 100%;
+}
+.sidenav{
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #232323;
+}
+.lanDesc{
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 200;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+    padding-right: 18px;
+    width: 100%;
+    overflow: hidden;
+}
+.hidden-button{
+    display: none;
+}
+
+.last{
+    transform: perspective(75em) rotateY(30deg) scale(0.9) !important;
+    // box-shadow: 16px 3px !important;
+}
+
+.second-last{
+    transform: perspective(0) rotateY(0deg) !important;
+    animation: transform 250ms
+    // box-shadow: 15px 2px !important;
+}
+
+.card{
+    transform: perspective(75em) rotateY(-30deg) scale(0.9);
+    // box-shadow: -16px 3px;
+    animation:ease-in-out 1s forwards;
+}
+
+.shadow{
+    box-shadow: 0px 2px 0px, 0px -2px 0px , 2px 0px 0px , -2px 0px 0px !important;
+}
+
+@media screen and (max-width:1500px) {
+    .last{
+        display: none !important;
+    }
+    .second-last{
+        transform: perspective(0) rotateY(0deg) !important;
+        // box-shadow: 15px 2px !important;
+    }
+    .card{
+        transform: perspective(0) rotateY(0deg) !important;
+    } 
+    
+}
+
+/* @media screen and (min-width:1500) {
+     .caresol{
+        padding: 8px;
+    }
+} */
+
+@media screen and (max-width:902px) {
+    .second-last{
+        display: none !important;
+    }
+    .card{
+        transform: perspective(0) rotateY(0deg) !important;
+        // box-shadow: -16px 3px;
+        animation:ease-in-out 1s forwards;
+    }
+    .lan-img-dark{
+        width: 60vw;
+    }
+    .lan-img-light{
+        width: 60vw;
+    }
+    /* .card{
+        width:90vw;
+    } */
+    
+}

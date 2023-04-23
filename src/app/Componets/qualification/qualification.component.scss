@@ -1,0 +1,127 @@
+.main-body{
+    padding-left: 50px;
+    margin: auto;
+    padding-right: 50px;
+    padding-bottom: 150px;
+}
+
+.smu{
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+    
+}
+.mun{
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+    margin-top: 5vh;
+}
+.snu{
+    max-width: 250px;
+    max-height: 210px;
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+.snu-height{
+    height:24vh !important; 
+    margin-top: -5vh !important;
+}
+.about-title{
+    font-family: Noto Sans;
+    font-size: 60px;
+    // font-weight: 200;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.decorator{
+    width:170px;
+    height:13px;
+    background-color: #d9d9d9;
+    align-self: center;
+    margin: auto;
+}
+.qualifications{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: baseline;
+    padding-top: 6vh;
+}
+.qua-box{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+}
+.qua-title{
+    font-family: Noto Sans;
+    font-size: 30px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+    align-self: center;
+}
+.qua-desc{
+    font-family: Noto Sans;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;    
+}
+.qua-points{
+    font-family: Noto Sans;
+    font-size: 20px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+    text-align: left;
+    // color: #000;
+    align-self: center;
+}
+.qua-img{
+    margin: auto;
+    background-color: white;
+    align-content: center;
+    width: 250px;
+    height: 250px;
+}
+
+
+@media screen and (max-width:800px) {
+    .about-title{
+        font-size: 7vw;
+    }
+}
+
+@media screen and (max-width:688px) {
+    .about-title{
+        font-size: 8vw;
+    }
+}
+@media screen and (max-width:550px) {
+    .about-title{
+        font-size: 10vw;
+    }
+}

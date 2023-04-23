@@ -1,0 +1,225 @@
+.body{
+   padding:50px;
+}
+.h1{
+    justify-content: flex-start;
+    text-transform: capitalize;
+    text-decoration: solid;
+    // text-decoration-color: white;
+    width: 100%;
+}
+.header{
+    padding: 50px;
+    padding-bottom: 0px;
+    display: flex;
+    height: 2vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+.option-button{
+    margin-left: auto;
+}
+.titleName{
+    text-decoration: solid;
+    // text-decoration-color: white;
+    font-size:x-large;
+    font-weight: bold;
+}
+.sub-menu{
+    // background-color: blueviolet;
+    margin: auto;
+    font-size: x-large;
+    height: 8vh;
+    padding-top: 5px;
+}
+.menu-button{
+    width: auto;
+    font-family: Noto Sans;
+    font-size: 24px;
+    --primary-low: transparent !important;
+}
+
+// .menu-button:hover{
+//     box-shadow: 0px 2px 0px;
+// }
+
+.menu:hover > .menu-button{
+    opacity: 0.5;
+}
+
+.menu:hover > .menu-button:hover{
+    opacity: 1;
+    // box-shadow: 0px 2px 0px;
+}
+
+
+.anim-light{
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    color: #0100c8;
+    font-weight: 600;
+}
+  
+  /* Fade in */
+.anim-light::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #0100c8;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+  
+.anim-light:hover::after{
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+.anim-dark{
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+  
+  /* Fade in */
+.anim-dark::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: #d9d9d9;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+  
+.anim-dark:hover::after{
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+.anim-dark:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+  }
+
+
+.menu{
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+
+    flex-direction: row;
+    gap: 3vw;
+    padding-top: 7.15vh;
+    padding-right: 45px;
+}
+.hamburger{
+    align-self: flex-end;
+    margin-right: 0px;
+    margin-left: auto;
+}
+.resp{
+    display: none;
+}
+.menu-button-collapse{
+    width: 100%;
+    text-align: left;
+}
+.bord{
+    width: 90%;
+    height: 1px;
+    background-color: #d9d9d9;
+    margin-left: 5%;
+    margin-right: 5%;
+    // box-shadow: 0px 10px 8px  #d9d9d9;
+}
+
+// .bord-shadow{
+//     width: 100%;
+//     height: 10px;
+//     margin-top: -11px;
+//     box-shadow: 0px 10px 8px #d9d9d9;
+//     margin-left: 0%;
+// }
+
+.bord-shadow-light{
+    width: 90%;
+    height: 3px;
+    margin-top: -7px;
+    box-shadow: 5px 10px 8px #0100c8;
+    margin-left: 5%;
+}
+
+.bord-shadow-dark{
+    width: 90%;
+    height: 3px;
+    margin-top: -7px;
+    box-shadow: 5px 10px 8px whitesmoke;
+    margin-left: 5%;
+}
+
+.menu-desc{
+    font-family: Noto Sans;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+}
+
+.logo{
+    max-width: 239px;
+    height: 140px;
+    width: 259px;
+    max-height: 232px;
+    align-self: flex-start;
+    margin-left: 6vw;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-img{
+    max-width: 232px;
+    max-height: 250px;
+    width: 100%;
+    min-width: 100px;
+    min-height: 45px;
+    object-fit: contain;
+    margin-left: -15px; 
+    margin-top: -41px;
+}
+
+.shadow-img{
+    -webkit-filter: drop-shadow(2px 2px 0 black)
+    drop-shadow(-2px -2px 0 black);
+    filter: drop-shadow(2px 2px 0 black) 
+    drop-shadow(-2px -2px 0 black)
+}
+
+@media screen and (max-width: 1277px) {
+    .menu-button {display: none;}
+    .resp {display: flex; align-self: baseline} ;
+    .menu{
+        margin-left: 9vw;
+    }
+    .logo{
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 1277px ) {
+
+    .logo-img{
+        margin-left: -15px;
+        margin-top: -26px;
+    }
+
+}

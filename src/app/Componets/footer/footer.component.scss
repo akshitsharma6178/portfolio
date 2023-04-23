@@ -1,0 +1,82 @@
+.body{
+    padding:50px;
+ }
+ .h1{
+     justify-content: flex-start;
+     text-transform: capitalize;
+     text-decoration: solid;
+    //  text-decoration-color: white;
+     width: 100%;
+ }
+ .footer{
+     padding-left: 50px;
+     padding-right: 50px;
+     padding-bottom: 20px;
+     bottom: 0px;
+    //  background-color: white;
+ }
+ .titleName{
+    text-decoration: solid;
+    // text-decoration-color: white;
+    font-size:x-large;
+    font-weight: bold;
+}
+.footer-content{
+    width: 100%;
+    display: flex;
+}
+.email{
+    width: fit-content;
+    height: 33px;
+    margin: auto;
+    margin-right: 0px;
+    font-family: Noto Sans;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    // color: #000;
+    align-self: flex-end;   
+    flex-wrap: wrap;
+    padding-top: 11px;
+    text-decoration: none;
+    // color: white
+}
+.icon-set{
+    display: flex;
+    margin: auto;
+    margin-left: 0px;
+}
+.iconPara{
+    margin-right: 20px;
+}
+.link-icon{
+    // color: black;
+    cursor:pointer;
+}
+.icon-set:hover > .link-icon{
+    opacity: 0.5;
+}
+.icon-set:hover > .link-icon:hover{
+    opacity: 1;
+}
+
+
+.icon-color-dark{
+    color: #0100c8;
+}
+.icon-color-light{
+    color: white;
+}
+/* @media screen and (max-width:455px) {
+    .email{
+        font-size: 5vw;
+    }
+} */
+@media screen and (max-width:800px) {
+    .email{
+        font-size: 12px;
+    }
+}

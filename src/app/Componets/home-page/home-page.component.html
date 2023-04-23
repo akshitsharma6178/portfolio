@@ -1,0 +1,16 @@
+<div id="avt" class="main-body" (mouseover)="isHover=true" (mouseout)="isHover=false">
+    <div id="img" [ngClass]="{'avatar-dark': darkMode,'avatar-light': !darkMode}">
+        <img  class="image" [ngClass]="{'img-hover':isHover}" (mousemove)="mouseEvent($event,'in')" (mouseout)="mouseEvent($event,'out')" src="../../../assets/images/pfp.png" alt="">
+    </div>
+    <div class="about">
+        <div class="descoration-body">
+            <div class="decoration" [ngClass]="{'decorator-light': !darkMode}"></div>
+        </div>
+            <span class="salutation">Hi, I'm 
+                <span class="name">Akshit Sharma</span></span>
+            <!-- <app-livetext class="name" [ngClass]="{'name-light': !darkMode}"[string]="name"></app-livetext> -->
+        <div class="desc-body">
+            <span class="desc">Full Stack developer</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<body>
+    <div class="header">
+        <ng-template [ngIf]="darkMode">
+                <a (click)="btnClick('')" class="logo">
+                    <img class="logo-img shadow-img" src="../../../assets/images/logo-dark.png" alt="">
+                </a>
+        </ng-template>
+        <ng-template [ngIf]="!darkMode">
+            <a (click)="btnClick('')" class="logo">
+                <img class="logo-img" src="../../../assets/images/logo-light.png" alt="">
+            </a>
+        </ng-template>
+
+        <div class="menu">
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('')">// Home</button>
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('about')">// About</button>
+            <!-- <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('qualification')">Qualification</button> -->
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('experience')">// Journey</button>
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('language')">// Technology Stack</button>
+            <!-- <button class="menu-button" mat-button (click)="btnClick('sample')">Sample Projects</button> -->
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('project')">// Projects</button>
+        </div>
+        <div class="resp">
+            <mat-accordion >
+                <mat-expansion-panel  #mep="matExpansionPanel" hideToggle (opened)="panelOpenState = true"
+                                    (closed)="panelOpenState = false" [expanded]="panelOpenState != null && panelOpenState === true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="menu-desc">Menu</mat-panel-title>
+                <mat-icon class="hamburger" >toc</mat-icon>
+                </mat-expansion-panel-header>
+                    <button class="menu-button-collapse" mat-button (click)="panelOpenState = !panelOpenState; btnClick('')">Home</button>
+                    <button class="menu-button-collapse" mat-button (click)="btnClick('about')">About</button>
+                    <!-- <button class="menu-button-collapse" mat-button (click)="btnClick('qualification')">Qualification</button> -->
+                    <button class="menu-button-collapse" mat-button (click)="btnClick('experience')">Journey</button>
+                    <button class="menu-button-collapse" mat-button (click)="btnClick('language')">Technology Stack</button>
+                    <!-- <button class="menu-button-collapse" mat-button (click)="btnClick('sample')">Sample Projects</button> -->
+                    <button class="menu-button-collapse" mat-button (click)="btnClick('project')">Projects</button>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+    <!-- <div class="bord">
+    </div>
+    <div [ngClass]="{'bord-shadow-dark':darkMode,'bord-shadow-light':!darkMode}"></div> -->
+</body>

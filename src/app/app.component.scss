@@ -1,0 +1,138 @@
+
+// n is number of stars required
+@function multiple-box-shadow ($n) {
+  $height: 4000;
+  $width: 4000;
+  $value: '#{random($height)}px #{random($width)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random($height)}px #{random($width)}px #FFF';
+  }
+
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+$height:100%;
+
+
+
+// .background_anim {
+//   height: 100vh;
+// //   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+//   overflow: hidden;
+//   position: absolute;
+// }
+.stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  animation: animStar 250s linear infinite;
+  // text-decoration-color: white;
+  // box-shadow: $shadows-small;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    text-decoration-color: white;
+    // box-shadow: $shadows-small;
+  }
+}
+.stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+.stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+};
+
+.footer{
+    // position: fixed;
+    // bottom: 0%;
+    // width: 100%;
+    z-index: 2;
+    // height: 45px;
+}
+.header{
+    // position: fixed;
+    // width: 100%;
+    // top:0px;
+    // height: 85px;
+    z-index: 10;
+}
+
+
+.main_body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.darkMode .main_body{
+  background-color: black;
+}
+app-header {
+  height: 123px;
+  flex-shrink: 0;
+}
+
+.main_body > app-header {
+  flex: 0 0 auto;
+}
+
+.main_body > .app-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.main_body > app-footer {
+  flex: 0 0 auto;
+}
+
+app-footer {
+  margin-top: auto;
+}
+
+

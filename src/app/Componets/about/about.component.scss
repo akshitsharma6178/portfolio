@@ -1,0 +1,123 @@
+
+:host{
+    margin: auto;
+}
+.about-title{
+    font-family: Noto Sans;
+    font-size: 60px;
+    // font-weight: 200;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+    margin: 0px;
+    margin-bottom: 20px;
+}
+.about-body{
+    font-family: Noto Sans;
+    font-size: 1.6vw;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.95;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+}
+.main-body{
+    height: auto;
+    padding-left: 12vw;
+    padding-right: 12vw;
+    padding-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 150px;
+    align-items: center;
+}
+
+.dark-color-bg{
+    background-color: #0100c8 !important;
+}
+.light-color{
+    color: #185adb;
+}
+.decorator{
+    width:170px;
+    height:13px;
+    background-color: #d9d9d9;
+    align-self: center;
+    margin: auto;
+}
+
+.body-emphasis{
+    font-family: Noto Sans;
+    font-size: 1.6vw;
+    font-weight: 400;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.95;
+    letter-spacing: normal;
+    text-align: center;
+    // color: #000;
+}
+
+@media screen and (max-width:1366px) {
+    .about-body{
+        font-size: 2vw;
+    }
+    .body-emphasis{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width:980px) {
+    .about-body{
+        font-size: 2.5vw;
+    }
+    .body-emphasis{
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .about-title{
+        font-size: 7vw;
+    }
+    .about-body{
+        font-size: 2.75vw;
+    }
+    .body-emphasis{
+        font-size: 2.75vw;
+    }
+    .decorator{
+        height: 8px;
+    }
+}
+
+@media screen and (max-width:688px) {
+    .about-title{
+        font-size: 8vw;
+    }
+    .about-body{
+        font-size: 3vw;
+    }
+    .body-emphasis{
+        font-size: 3vw;
+    }
+}
+@media screen and (max-width:550px) {
+    .about-title{
+        font-size: 10vw;
+    }
+    .about-body{
+        font-size: 4vw;
+    }
+    .body-emphasis{
+        font-size: 4vw;
+    }
+    .decorator{
+        width: 125px;
+    }
+}

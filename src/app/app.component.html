@@ -1,0 +1,18 @@
+<div id="heightProp" class="main_body mat-app-background">
+    <app-header class="header mat-app-background"></app-header>
+    <!-- <div [@routeAnimations]="getRouteAnimationData()"> -->
+        <div id="animProp" class="background_image">
+            <div *ngFor="let i of counter(50); let in = index" style="position:absolute" [ngStyle]="{'margin-top': firstRun && getValTop(in), 'margin-left' : firstRun && getValLeft(in)}" class="stars">
+                #
+            </div>
+            <div *ngIf="darkMode" class="stars2">
+            </div>
+            <div *ngIf="darkMode" class="stars3">
+            </div>
+    </div>
+    <div class="app-content">
+        <router-outlet class="main mat-app-background"></router-outlet>
+    </div>
+    <app-footer class="footer mat-app-background"></app-footer>
+</div>
+

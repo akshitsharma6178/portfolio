@@ -5,7 +5,7 @@
           "src": "**",
           "use": "@now/static",
           "config": {
-            "maxSize": "0",
+            "maxSize": "0"
           }
         }
       ],

@@ -6,8 +6,8 @@
           "use": "@now/static",
           "config": {
             "maxSize": "0",
-            "buildCommand": "ng build"
           }
         }
-      ]
+      ],
+    "buildCommand": "ng build"
 }

@@ -64,11 +64,12 @@ export class LanguagesComponent implements OnInit {
     iconRegistry.addSvgIcon('android', sanitizer.bypassSecurityTrustResourceUrl("../../assets/images/android_try.svg"));
     this.languageListShown = [
       'angular',
-      'android',
-      'css'
+      'react',
+      'android'
   ]
     this.languageList = [
       'angular',
+      'react',
       'android',
       'css',
       'firebase',
@@ -78,6 +79,7 @@ export class LanguagesComponent implements OnInit {
   ]
   this.languageDisc={
     'angular':'Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.',
+    'react': 'React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies.',
     'android':'Android is a mobile operating system based on a modified version of the Linux kernel and other open source software, designed primarily for touchscreen mobile devices such as smartphones and tablets.',
     'css':'Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML.',
     'firebase':'Firebase is a set of hosting services for any type of application. It offers NoSQL and real-time hosting of databases, content, social authentication, and notifications, or services, such as a real-time communication server.',
@@ -181,7 +183,10 @@ export class LanguagesComponent implements OnInit {
     return false;
   }
   isMobile(): boolean {
-    let hasTouch = 'ontouchstart' in this.document.documentElement || navigator.maxTouchPoints > 0;
-    return hasTouch? true: false;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

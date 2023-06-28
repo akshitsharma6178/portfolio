@@ -39,6 +39,10 @@ export class HeaderComponent implements OnInit {
   }
 
   btnClick(name:string): void {
+    if(name === "blog") {
+      window.location.href = "https://blog.akshitsharma6178.com";
+      return
+    }
     this.panelOpenState = false;
     this.router.navigate([`/${name}`]);
   }

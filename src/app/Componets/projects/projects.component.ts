@@ -248,7 +248,6 @@ export class ProjectsComponent implements OnInit {
       ];
     }
     this.currentInd = this.actual
-    console.log(val, this.combinations)
   }
 
   expand(id: any){

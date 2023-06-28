@@ -19,6 +19,8 @@
             <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('language')">// Technology Stack</button>
             <!-- <button class="menu-button" mat-button (click)="btnClick('sample')">Sample Projects</button> -->
             <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('project')">// Projects</button>
+            <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('blog')">// Blog</button>
+
         </div>
         <div class="resp">
             <mat-accordion >
@@ -35,6 +37,8 @@
                     <button class="menu-button-collapse" mat-button (click)="btnClick('language')">Technology Stack</button>
                     <!-- <button class="menu-button-collapse" mat-button (click)="btnClick('sample')">Sample Projects</button> -->
                     <button class="menu-button-collapse" mat-button (click)="btnClick('project')">Projects</button>
+                    <button class="menu-button-collapse" mat-button (click)="btnClick('blog')">Blog</button>
+                    
                 </mat-expansion-panel>
             </mat-accordion>
         </div>

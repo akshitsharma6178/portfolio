@@ -97,15 +97,6 @@ export class ExperienceComponent implements OnInit, AfterContentInit {
   ) { }
 
   ngOnInit(): void {
-    if(window.innerWidth < 1277){
-      // document.getElementById('heightProp')?.style.setProperty('height',"100%")
-      // document.getElementById('animProp')?.style.setProperty('overflow',"hidden")
-      // document.getElementById('animProp')?.style.setProperty('height',"100%")
-    }
-    if(window.innerWidth > 1277){
-      // document.getElementById('heightProp')?.style.setProperty('height',"107vh")
-      // document.getElementById('animProp')?.style.setProperty('height',"107vh")  
-    }
     this.darkModeService.getValue().subscribe(x =>{
       if(this.localStorage.getMode() == "dark"){
         this.darkMode = true;

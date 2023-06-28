@@ -739,6 +739,14 @@
     .descCard-dark:nth-child(2n)::before{
         left: calc(50% + 3rem);
     }
+    .descCard-light:nth-child(n)::before{
+        top: 13rem;
+        margin-top: 0%;
+        left: calc(50% - 5rem);
+    }
+    .descCard-light:nth-child(2n)::before{
+        left: calc(50% + 3rem);
+    }
     :host{
         margin-top: 5vh;
     }
@@ -1065,3 +1073,179 @@
 //         font-size: 10vw;
 //     }
 // }
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .timeline-dark::after{
+        left: 0px;
+        translate: 10px;
+    }
+    .timeline-light::after{
+        left: 0px;
+        translate: 10px;
+    }
+    .descCard-dark:nth-child(n)::before {
+        left: 0;
+        translate: -47px;
+    }
+    .descCard-light:nth-child(n)::before {
+        left: 0;
+        translate: -47px;
+    }
+    .descCard-dark::after{
+        left: 0%;
+        translate: -73px;
+    }
+    .descCard-light::after{
+        left: 0%;
+        translate: -73px;
+    }
+    .timeline-cont{
+        transform: translateX(10px);
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 875px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -134px;
+    }
+    .descCard-dark::after{
+        translate: -175px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -134px;
+    }
+    .descCard-light::after{
+        translate: -175px;
+    }
+}
+
+@media screen and (max-width: 875px) and (min-width: 840px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -134px;
+    }
+    .descCard-dark::after{
+        translate: -165px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -134px;
+    }
+    .descCard-light::after{
+        translate: -165px;
+    }
+}
+
+@media screen and (max-width: 840px) and (min-width: 800px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-dark::after{
+        translate: -150px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-light::after{
+        translate: -150px;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 750px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-dark::after{
+        translate: -135px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-light::after{
+        translate: -135px;
+    }
+}
+@media screen and (max-width: 750px) and (min-width: 700px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-dark::after{
+        translate: -125px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -114px;
+    }
+    .descCard-light::after{
+        translate: -125px;
+    }
+}
+
+
+@media screen and (max-width: 680px) and (min-width: 600px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -91px;
+    }
+    .descCard-dark::after{
+        translate: -119px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -91px;
+    }
+    .descCard-light::after{
+        translate: -119px;
+    }
+}
+
+@media screen and (max-width: 580px) and (min-width: 530px) {
+    .descCard-dark:nth-child(n)::before{
+        translate: -62px;
+    }
+    .descCard-dark::after{
+        translate: -84px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -62px;
+    }
+    .descCard-light::after{
+        translate: -84px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 520px) and  (min-width: 500px) {
+    .descCard-dark::after{
+        translate: -79px;
+    }
+    .descCard-light::after{
+        translate: -79px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .descCard-dark::after{
+        translate: -68px;
+    }
+    .descCard-light::after{
+        translate: -68px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .descCard-dark::after{
+        translate: -63px;
+    }
+    .descCard-light::after{
+        translate: -63px;
+    }
+    .descCard-light:nth-child(n)::before{
+        translate: -40px;
+    }
+    .descCard-dark:nth-child(n)::before{
+        translate: -40px;
+    }
+}

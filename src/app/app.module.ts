@@ -21,7 +21,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LanguagesComponent } from './Componets/languages/languages.component';
 import { MatCardModule } from '@angular/material/card';
-import { SampleProjectsComponent } from './Componets/sample-projects/sample-projects.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocalStorageService } from './Services/Storage/local-storage.service';
@@ -51,7 +50,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ResearchComponent,
     ExperienceComponent,
     LanguagesComponent,
-    SampleProjectsComponent,
     ProjectsComponent,
     LivetextComponent,
     ModalsComponent

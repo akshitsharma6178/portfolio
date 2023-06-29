@@ -1,13 +1,4 @@
 {
     "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }],
-    "builds": [
-        {
-          "src": "**",
-          "use": "@now/static",
-          "config": {
-            "maxSize": "0"
-          }
-        }
-      ],
     "buildCommand": "ng build"
 }

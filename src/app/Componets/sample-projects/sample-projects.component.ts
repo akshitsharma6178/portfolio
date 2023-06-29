@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatChip } from '@angular/material/chips';
 import { LocalStorageService } from 'src/app/Services/Storage/local-storage.service';
 
@@ -13,7 +13,7 @@ export type MyType = 'input';
 })
 export class SampleProjectsComponent implements OnInit {
   string:string = "Samples"
-  formGroup: FormGroup;
+  formGroup: UntypedFormGroup;
   storageEnable: boolean;
   panelOpenState = false;
   input = [
@@ -29,11 +29,11 @@ export class SampleProjectsComponent implements OnInit {
     {'name':'hello1'}
   ];
   addControl = false;
-  addControlGroup: FormGroup;
+  addControlGroup: UntypedFormGroup;
   selectedControl: String[] = [];
 
-  constructor(formBuilder: FormBuilder,
-    private fb: FormBuilder,
+  constructor(formBuilder: UntypedFormBuilder,
+    private fb: UntypedFormBuilder,
     private storage: LocalStorageService) { 
     this.formGroup = formBuilder.group({
       enableLocalStore: '',

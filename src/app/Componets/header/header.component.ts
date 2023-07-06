@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DbService } from 'src/app/Services/db/db.service';
 import { LocalStorageService } from 'src/app/Services/Storage/local-storage.service';
@@ -13,7 +13,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private router:Router,
     private local: LocalStorageService,
-    private darkModeService: DbService
+    private darkModeService: DbService,
+    private elementRef: ElementRef
     ) {
       // if(this.local.getMode() == 'dark'){
       //   this.darkMode = true;
@@ -40,11 +41,12 @@ export class HeaderComponent implements OnInit {
 
   btnClick(name:string): void {
     if(name === "blog") {
-      window.location.href = "https://blog.akshitsharma6178.com";
+      window.open("https://blog.akshitsharma6178.com", "_blank");
       return
     }
     this.panelOpenState = false;
-    this.router.navigate([`/${name}`]);
+    const newURL = window.location.origin + '/#' + name; // Construct the new URL
+    window.location.href = newURL;
   }
 
 

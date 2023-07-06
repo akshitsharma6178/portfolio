@@ -1,9 +1,10 @@
 import { trigger, transition, style, query, animateChild, group, animate } from '@angular/animations';
-import { HostBinding } from '@angular/core';
+import { ElementRef, HostBinding, OnDestroy, Renderer2, ViewChild } from '@angular/core';
 import { Component } from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { DbService } from './Services/db/db.service';
 import { LocalStorageService } from './Services/Storage/local-storage.service';
+import { Subscription } from 'rxjs';
 // import * as globals from './../assets/db/globals';
 
 @Component({
@@ -62,21 +63,26 @@ import { LocalStorageService } from './Services/Storage/local-storage.service';
     ])
   ]
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy{
+  @ViewChild('container') container!: ElementRef;
   title = 'my-portfolio';
   darkMode: boolean = false;
   firstRun = true;
+  private subscription!: Subscription
 
   @HostBinding('class') className ='';
 
-  constructor(private contexts:ChildrenOutletContexts, private darkModeService: DbService, private localStorage: LocalStorageService){}
+  constructor(private contexts:ChildrenOutletContexts, private darkModeService: DbService, private localStorage: LocalStorageService, private renderer: Renderer2){
+    console.log("constructor run")
+  }
   getRouteAnimationData(){
     // console.log(this.contexts.getContext('primary'))
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
     // return 'routeAnimations'
   }
   ngOnInit(): void{
-    this.darkModeService.getValue().subscribe(x =>{
+    console.log("ngONinit run")
+    this.subscription = this.darkModeService.getValue().subscribe(x =>{
       const darkClassName = 'darkMode';
       if(this.localStorage.getMode() == "dark"){
         this.className = darkClassName;
@@ -97,6 +103,28 @@ export class AppComponent {
   counter(i: number) {
     return new Array(i);
   }
+
+  onScroll(event : WheelEvent){
+    event.preventDefault();
+
+    let scrollAmount = event.deltaY;
+    let containerElement = this.container.nativeElement;
+
+    let divElements : HTMLElement[] = Array.from(containerElement.children).filter(
+      (child: unknown): child is HTMLElement => {
+        return (child as HTMLElement).tagName?.toLowerCase().startsWith('app-');
+      }
+    );
+    console.log(divElements)
+
+    let divHeight = divElements[0].offsetHeight + 20;
+    let scrollPosition = containerElement.scrollTop + scrollAmount;
+
+    let targetIndex = Math.round(scrollPosition / divHeight);
+    let targetScrollPosition = targetIndex * divHeight;
+
+    this.renderer.setProperty(containerElement, 'scrollTop', targetScrollPosition);
+  }
   getValLeft(i:any){
     if(i==49){
       this.firstRun=false;
@@ -115,5 +143,8 @@ export class AppComponent {
 
   getRndInteger(min: any, max:any) {
     return Math.floor(Math.random() * (max - min) ) + min;
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

@@ -86,6 +86,10 @@ export class ExperienceComponent implements OnInit, AfterContentInit {
     '5': false,
     '6': false
   }
+  experienceCards: string[] = [];
+  expData: {
+    [key: string]: string[]
+  } = {}
 
   visible_2021 = 'hidden';
   visible_2017 = 'hidden';
@@ -112,6 +116,36 @@ export class ExperienceComponent implements OnInit, AfterContentInit {
       }  
 
     })
+    this.experienceCards = [
+      'ggsipu',
+      'certification',
+      'uptodown-light',
+      'avalon-light',
+      'mun',
+    ]
+
+    this.expData = {
+      'ggsipu' : [
+        "Started Bachelor's at GGSIPU.",
+        'HP Education PHP Certification.'
+      ],
+      'certification':[
+        'Finland Certification in Android with JAVA.',
+        'Microsoft Kodding Python Certification.'
+      ],
+      'uptodown-light':[
+        'Freelance/ Intership at Uptodown.',
+        'Microsoft Kodding Python with ML Certification.',
+        'Bolt IoT Certification.'
+      ],
+      'avalon-light':[
+        'Full-Stack Software Developer Trainee.'
+      ],
+      'mun':[
+        'Completed Bachelors',
+        "Started Pursuing Master's In Applied Science"
+      ]
+    }
   }
 
   ngAfterContentInit() {

@@ -4,105 +4,17 @@
         <app-livetext [string]="string" class="about-title"></app-livetext>
     </div>
     <div id="dec" [ngClass]="{'decorator-dark': darkMode, 'decorator-light': !darkMode}"></div>
-    <!-- <div class="qualifications">
-        <div class="qua-box">
-            <div class="qua-img">
-                <img *ngIf="darkMode" class="smu" src="../../../assets/images/avalon-dark.png" alt="">
-                <img *ngIf="!darkMode" class="smu" src="../../../assets/images/avalon-light.png" alt="">
-            </div>
-            <div class="qua-title">
-                <span>Full Stack Web Developer Intern</span>
-            </div>
-            <div class="qua-desc">
-                <span>2020.01 ~ 2020.07</span>
-            </div>
-            <div class="qua-points">
-                <ul>
-                    <li>Worked on Government authorised Projects.</li>
-                    <li>Worked on UNICEF Projects</li>
-                    <li>Technology Stack Used:</li>
-                    <ul>
-                        <li>Angular</li>
-                        <li>NodeJs</li>
-                        <li>AngularJs</li>
-                        <li>SQL</li>
-                        <li>CakePHP</li>
-                    </ul>
-                </ul>
-            </div>
-        </div>
-        <div class="qua-box">
-            <div class="qua-img">
-                <img *ngIf="darkMode" class="smu" src="../../../assets/images/alfred-dark.png" alt="">
-                <img *ngIf="!darkMode" class="smu" src="../../../assets/images/alfred-light.png" alt="">
-            </div>
-            <div class="qua-title">
-                <span>Software Developer</span>
-            </div>
-            <div class="qua-desc">
-                <span>2019.07 ~ 2019.12</span>
-            </div>
-            <div class="qua-points">
-                <ul>
-                    <li>Maintained the sole responsibility for the Development of the app Trilingo.</li>
-                    <li>Technology Stack Used</li>
-                    <ul>
-                        <li>Flutter</li>
-                        <li>Firebase</li>
-                        <li>FireStore</li>
-                    </ul>
-                </ul>
-            </div>
-        </div>  
-        <div class="qua-box">
-            <div class="qua-img">
-                <img *ngIf="darkMode" class="smu" src="../../../assets/images/ndmc-dark.png" alt="">
-                <img *ngIf="!darkMode" class="smu" src="../../../assets/images/ndmc-light.png" alt="">
-            </div>
-            <div class="qua-title">
-                <span>Trainee</span>
-            </div>
-            <div class="qua-desc">
-                <span>2019.09 ~ 2019.10</span>
-            </div>
-            <div class="qua-points">
-                <ul>
-                    <li>Maintained The Offical Delhi Government Webiste BaratGhr Feature.</li>
-                    <li>Technology Stack Used</li>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++ Runtime</li>
-                    </ul>
-                </ul>
-            </div>
-        </div>  
-        <div class="qua-box">
-            <div class="qua-img">
-                <img *ngIf="darkMode" class="smu" src="../../../assets/images/uptodown-dark.png" alt="">
-                <img *ngIf="!darkMode" class="smu" src="../../../assets/images/uptodown-light.png" alt="">
-            </div>
-            <div class="qua-title">
-                <span>Android Developer</span>
-            </div>
-            <div class="qua-desc">
-                <span>2018.07 ~ 2018.09</span>
-            </div>
-            <div class="qua-points">
-                <ul>
-                    <li>Developed an Android app for the companies website store.</li>
-                    <li>Technology Stack Used</li>
-                    <ul>
-                        <li>Android</li>
-                        <li>JAVA</li>
-                    </ul>
-                </ul>
-            </div>
-        </div> 
-    </div> -->
     <div class="timeline-cont">
         <div id="tl" [ngClass]="{'timeline-dark': darkMode, 'timeline-light': !darkMode}">
-            <!-- <mat-card id="1" (click)="handleClick(1)" class="descCard-up up"></mat-card> -->
-            <div (click)="handleClick(1)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+            <div *ngFor="let i of experienceCards; let y = index" (click)="handleClick(y+1)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+                <mat-card id="{{y+1}}" class="descCard-block" [ngClass]="{'down': y % 2 == 0, 'up': y % 2 != 0 }">
+                    <img class="image-down" src="../../../assets/images/{{i}}.png" alt="">
+                    <div class="down-text">
+                        <span *ngFor="let z of expData[i]">{{z}}</span>
+                    </div>
+                </mat-card>
+            </div>
+            <!-- <div (click)="handleClick(1)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
                 <mat-card id="1" class="descCard-block down">
                     <img class="image-down" src="../../../assets/images/ggsipu.png" alt="">
                     <br>
@@ -111,8 +23,8 @@
                         <span>HP Education PHP Certification.</span><br>
                     </div>
                 </mat-card>
-            </div>
-            <div (click)="handleClick(2)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+            </div> -->
+            <!-- <div (click)="handleClick(2)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
                 <mat-card id="2" class="descCard-block up">
                     <img class="image" src="../../../assets/images/certification.png" alt="">
                     <div class="down-text">
@@ -120,8 +32,8 @@
                         <span>Microsoft Kodding Python Certification.</span><br>
                     </div>
                 </mat-card>
-            </div>
-            <div (click)="handleClick(3)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+            </div> -->
+            <!-- <div (click)="handleClick(3)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
                 <mat-card id="3" class="descCard-block down">
                     <img *ngIf="darkMode" class="image-down" src="../../../assets/images/uptodown-dark.png" alt="">
                     <img *ngIf="!darkMode" class="image-down" src="../../../assets/images/uptodown-light.png" alt="">
@@ -131,9 +43,9 @@
                         <span>Bolt IoT Certification.</span><br>
                     </div>
                 </mat-card>
-            </div>
-            <div (click)="handleClick(4)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
-                <mat-card id="4" class="descCard-block up">
+            </div> -->
+            <div (click)="handleClick(6)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+                <mat-card id="6" class="descCard-block up">
                     <div class="columns">
                         <div class="col1">
                             <img *ngIf="darkMode" class="image2" src="../../../assets/images/ndmc-dark.png" alt="">
@@ -154,7 +66,7 @@
                     </div>
                 </mat-card>
             </div>
-            <div (click)="handleClick(5)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+            <!-- <div (click)="handleClick(5)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
                 <mat-card id="5" class="descCard-block down">
                     <img *ngIf="darkMode" class="image-down" src="../../../assets/images/avalon-dark.png" alt="">
                     <img *ngIf="!darkMode" class="image-down" src="../../../assets/images/avalon-light.png" alt="">
@@ -162,8 +74,8 @@
                         <span>Full-Stack Software Developer Trainee.</span>
                     </div>
                 </mat-card>
-            </div>
-            <div (click)="handleClick(6)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
+            </div> -->
+            <!-- <div (click)="handleClick(6)" [ngClass]="{'descCard-dark': darkMode, 'descCard-light': !darkMode}">
                 <mat-card id="6" class="descCard-block up">
                     <img class="image" src="../../../assets/images/mun.jpg" alt="">
                     <br>
@@ -172,20 +84,8 @@
                         <span> Started Pursuing Master's In Applied Science</span><br>
                     </div>
                 </mat-card>
-            </div>
+            </div> -->
     </div>
-
-        <!-- <p id="1t" class="cardUp">2016</p> -->
-        <!-- <div (click)="handleClick(1)" class="blah"></div>
-        <mat-card id="2" (click)="handleClick(2)" class="descCard-down down cardDown"></mat-card>
-        <p id="2t" class="cardUp-1">2017</p>
-        <div (click)="handleClick(2)" class="blah1"></div>
-        <mat-card id="3" (click)="handleClick(3)" class="descCard-up up"></mat-card>
-        <p id="3t" class="cardUp-2">2018</p>
-        <div (click)="handleClick(3)" class="blah2"></div>
-        <mat-card id="4" (click)="handleClick(4)" class="descCard-down down cardDown"></mat-card>
-        <p id="4t" class="cardUp-3">2019</p>
-        <div (click)="handleClick(4)" class="blah3"></div> -->
     </div>
 </div>
 

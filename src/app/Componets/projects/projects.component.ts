@@ -65,6 +65,9 @@ export class ProjectsComponent implements OnInit {
   raycaster: any;
   combinations:any;
   timerSubscription: any;
+  intervalId2: any;
+  intervalId3: any;
+  isPaused: boolean = false;
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
     this.x = event.clientX/ window.innerWidth;
     this.y = event.clientY/ window.innerHeight
@@ -83,6 +86,7 @@ export class ProjectsComponent implements OnInit {
   texture: any;
   hover1: any = 0;
   i = 1;
+  j = 1;
   _x: any;
   _y: any;
   x: any;
@@ -199,13 +203,34 @@ export class ProjectsComponent implements OnInit {
       // ).subscribe();
     // }
     this.intervalId = setInterval(()=>{
-          let index = this.uniqueRand(0, this.combinations.length - 1, this.prev),
-          combination = this.combinations[index];
-          this.currentInd = index
-          this.wrapper.dataset.configuration = combination.configuration;
-          this.wrapper.dataset.roundness = combination.roundness;
-          this.prev = index;
+      if(!this.isPaused){
+        let index = this.uniqueRand(0, this.combinations.length - 1, this.prev),
+        combination = this.combinations[index];
+        this.currentInd = index
+        this.wrapper.dataset.configuration = combination.configuration;
+        this.wrapper.dataset.roundness = combination.roundness;
+        this.prev = index;
+      }
     },3000);
+    this.intervalId2 = setInterval(()=>{
+      if(!this.isPaused){
+        this.expanded[this.j] = true
+        this.j = this.j + 1;
+        if(this.j > 6 ){
+          this.j = 1;
+        }
+      }
+    },1500);
+this.intervalId3 = setInterval(()=>{
+  if(!this.isPaused){
+    this.expanded[1] = false;
+    this.expanded[2] = false;
+    this.expanded[3] = false;
+    this.expanded[4] = false;
+    this.expanded[5] = false;
+    this.expanded[6] = false;
+  }
+},3000);
     // this,this.intervalId.pause()
     // document.getElementById('heightProp')?.style.setProperty('height',"100vh");
     // document.getElementById('animProp')?.style.setProperty('height',"100vh");
@@ -231,22 +256,22 @@ export class ProjectsComponent implements OnInit {
   }
 
   setHover(val: boolean){
-
-    if(val){ 
-      let temp = this.combinations[this.currentInd]
-      this.combinations = [temp? temp: { configuration: 1, roundness: 1 }]
-      this.actual = this.currentInd
-    }
-    if(!val){
-      this.combinations = [
-        { configuration: 1, roundness: 1 },
-        { configuration: 1, roundness: 2 },
-        { configuration: 1, roundness: 4 },
-        { configuration: 2, roundness: 2 },
-        { configuration: 2, roundness: 3 },
-        { configuration: 3, roundness: 3 }
-      ];
-    }
+    this.isPaused = val;
+    // if(val){ 
+    //   let temp = this.combinations[this.currentInd]
+    //   this.combinations = [temp? temp: { configuration: 1, roundness: 1 }]
+    //   this.actual = this.currentInd
+    // }
+    // if(!val){
+    //   this.combinations = [
+    //     { configuration: 1, roundness: 1 },
+    //     { configuration: 1, roundness: 2 },
+    //     { configuration: 1, roundness: 4 },
+    //     { configuration: 2, roundness: 2 },
+    //     { configuration: 2, roundness: 3 },
+    //     { configuration: 3, roundness: 3 }
+    //   ];
+    // }
     this.currentInd = this.actual
   }
 

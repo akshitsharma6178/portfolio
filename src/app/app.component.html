@@ -10,8 +10,12 @@
             <div *ngIf="darkMode" class="stars3">
             </div>
     </div>
-    <div class="app-content">
-        <router-outlet class="main mat-app-background"></router-outlet>
+    <div class="app-content" #container onscroll="onScroll($event)" >
+        <app-home-page id='home' class="main mat-app-background"></app-home-page>
+        <app-about id="about" class="main mat-app-background"></app-about>
+        <app-experience id="experience" class="main mat-app-background main-journey"></app-experience>
+        <app-languages id="language" class="main mat-app-background"></app-languages>
+        <app-projects id="project" class="main mat-app-background"></app-projects>
     </div>
     <app-footer class="footer mat-app-background"></app-footer>
 </div>

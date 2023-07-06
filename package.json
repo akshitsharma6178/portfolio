@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@mui/material": "^5.10.5",
     "rxjs": "~7.8.0",
+    "TagCloud": "^2.3.2",
     "three": "^0.145.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.1"

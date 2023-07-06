@@ -4,6 +4,9 @@
 
 .main-body{
     margin: auto;
+    margin-bottom: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     // margin-top: -51px;
     // display: flex;
     // justify-content: center;
@@ -12,9 +15,9 @@
     // align-items: center;
 }
 
-.main_body{
-    height: 124vh !important;
-}
+// .main_body{
+//     // height: 124vh !important;
+// }
 
 .smu{
     max-width: 250px;
@@ -173,9 +176,9 @@
     position: relative;
     width: 100%;
     height: 26vh;
-    max-height: 23vh;
+    max-height: 26vh;
     animation-fill-mode: forwards;
-    max-width: 12vw;
+    max-width: 14vw;
     opacity: 1;
     display: flex;
     flex-direction: column;
@@ -515,11 +518,12 @@
 .up{
     // top:0px;
     position: relative;
-    top: 10%;
+    // top: 10%;
+    margin-top: 1rem;
 }
 .down{
     margin-top: 35vh;
-    top: 12%;
+    top: 5rem;
 }
 
 .down-text{
@@ -568,7 +572,10 @@
     border-color: currentColor transparent currentColor transparent;
 }
 
-@media screen and (max-width: 1755px) {
+@media screen and (max-width: 1355px) {
+    html{
+        scroll-snap-type: none !important;
+    }
     .timeline-dark{
         max-width: 1200px;
         margin: 0 auto;
@@ -757,6 +764,8 @@
 @media screen and (max-width:900px) {
     .main-body{
         padding-bottom: 20%;
+        padding-left: unset;
+        padding-right: unset;
     }
     .timeline-dark::after{
         left: 0;

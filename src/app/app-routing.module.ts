@@ -10,14 +10,14 @@ import { ResearchComponent } from './Componets/research/research.component';
 // import { SampleProjectsComponent } from './Componets/sample-projects/sample-projects.component';
 
 const routes: Routes = [
-  {path: 'about', component: AboutComponent, data:{animation: 'aboutPage'}},
-  {path: 'qualification', component: QualificationComponent, data:{animation: 'qualificationPage'}},
-  {path: 'experience', component: ExperienceComponent, data:{animation: 'experiencePage'}},
-  {path: 'research', component: ResearchComponent, data:{animation: 'aboutPage'}},
-  {path: 'language', component: LanguagesComponent, data:{animation: 'languagePage'}},
+  {path: 'about', component: AboutComponent,  },
+  {path: 'qualification', component: QualificationComponent},
+  {path: 'experience', component: ExperienceComponent},
+  {path: 'research', component: ResearchComponent},
+  {path: 'language', component: LanguagesComponent},
   // {path: 'sample', component: SampleProjectsComponent, data:{animation: 'samplePage'}},
-  {path: 'project', component: ProjectsComponent, data:{animation: 'projectPage'}},
-  {path: '**', component: HomePageComponent, data:{animation: 'homePage'}}
+  {path: 'project', component: ProjectsComponent},
+  {path: '**', component: HomePageComponent }
 ];
 
 @NgModule({

@@ -74,6 +74,10 @@ $angular-dark-theme: mat.define-dark-theme(
 }
 
 
+html{
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
 body { margin:0; font-family: 'Noto Sans', sans-serif; transition: color; transition-delay: 750ms; transition-timing-function: ease-in-out;}
 
 ::-webkit-scrollbar {

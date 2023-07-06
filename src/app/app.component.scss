@@ -1,7 +1,7 @@
 
 // n is number of stars required
 @function multiple-box-shadow ($n) {
-  $height: 4000;
+  $height: 10000;
   $width: 4000;
   $value: '#{random($height)}px #{random($width)}px #FFF';
   @for $i from 2 through $n {
@@ -88,14 +88,30 @@ $height:100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 1rem;
+}
+
+.main {
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-margin-top: 10rem;
+}
+.main-journey{
+  scale: 0.8;
+}
+.main-about{
+  padding-top: 5px ;
 }
 
 .darkMode .main_body{
   background-color: black;
 }
 app-header {
-  height: 123px;
+  // height: 123px;
   flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  // box-shadow: 1px -4rem 5rem blue;
 }
 
 .main_body > app-header {
@@ -107,7 +123,9 @@ app-header {
   display: flex;
   flex-direction: column;
   margin: auto 0;
+  scroll-snap-type: y mandatory;
 }
+
 
 .main_body > app-footer {
   flex: 0 0 auto;
@@ -115,6 +133,8 @@ app-header {
 
 app-footer {
   margin-top: auto;
+  position: sticky;
+  bottom: 0;
 }
 
 

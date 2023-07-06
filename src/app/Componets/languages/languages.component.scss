@@ -35,20 +35,21 @@
     transition: transform 150ms;
 }
 .main-body{
-    padding-left: 50px;
+    padding-left: 1rem;
     margin: auto;
-    padding-right: 50px;
+    padding-right: 1rem;
     padding-bottom: 150px;
 }
 .images{
     display: flex;
-    margin: 5px;
+    // margin: 5px;
     align-items: center;
     padding-top: 10vh;
     width: 100%;
     object-fit: contain;
     justify-content: center;
     background: none;
+    gap: 1rem;
     
 }
 .card{
@@ -63,7 +64,7 @@
     max-width: 569px;
     margin-left: auto;
     // object-fit: contain;
-    margin: 0 0 10px 10px;
+    margin: 0 0 10px 0px;
     background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Flovepik.com%2Fimage-400133155%2Fbackground-of-scientific-and-technological-line.html&psig=AOvVaw0F3JbkUalXKgE9uLUaApkE&ust=1665877560269000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNCsptPz4PoCFQAAAAAdAAAAABAF);
 }
 

@@ -68,7 +68,13 @@ export class AboutComponent implements OnInit, OnDestroy{
       }  
     })
     this.options.keep = false;
-    if (window.innerWidth > 1080) {
+    console.log(window.innerWidth)
+    if (window.innerWidth > 2000) {
+      this.options.radius = 400;
+      this.options.maxSpeed = "normal";
+      this.options.initSpeed = "normal";
+    }
+    else if (window.innerWidth > 1080  && window.innerWidth < 2000) {
       this.options.radius = 300;
       this.options.maxSpeed = "normal";
       this.options.initSpeed = "normal";

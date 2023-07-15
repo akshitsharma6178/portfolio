@@ -95,7 +95,7 @@ export class HomePageComponent implements OnInit {
     
     
     let updateTransformStyle = function(x:any, y:any) {
-      var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+      var style = "rotateX(" + x/6 + "deg) rotateY(" + y/6 + "deg)";
       // console.log(style)
       if(inner){
         inner.style.transform = style;

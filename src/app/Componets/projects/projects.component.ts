@@ -212,25 +212,25 @@ export class ProjectsComponent implements OnInit {
         this.prev = index;
       }
     },3000);
-    this.intervalId2 = setInterval(()=>{
-      if(!this.isPaused){
-        this.expanded[this.j] = true
-        this.j = this.j + 1;
-        if(this.j > 6 ){
-          this.j = 1;
-        }
-      }
-    },1500);
-this.intervalId3 = setInterval(()=>{
-  if(!this.isPaused){
-    this.expanded[1] = false;
-    this.expanded[2] = false;
-    this.expanded[3] = false;
-    this.expanded[4] = false;
-    this.expanded[5] = false;
-    this.expanded[6] = false;
-  }
-},3000);
+//     this.intervalId2 = setInterval(()=>{
+//       if(!this.isPaused){
+//         this.expanded[this.j] = true
+//         this.j = this.j + 1;
+//         if(this.j > 6 ){
+//           this.j = 1;
+//         }
+//       }
+//     },1500);
+// this.intervalId3 = setInterval(()=>{
+//   if(!this.isPaused){
+//     this.expanded[1] = false;
+//     this.expanded[2] = false;
+//     this.expanded[3] = false;
+//     this.expanded[4] = false;
+//     this.expanded[5] = false;
+//     this.expanded[6] = false;
+//   }
+// },3000);
     // this,this.intervalId.pause()
     // document.getElementById('heightProp')?.style.setProperty('height',"100vh");
     // document.getElementById('animProp')?.style.setProperty('height',"100vh");

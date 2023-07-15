@@ -11,7 +11,7 @@
     </ng-template>
 
     <div class="menu">
-        <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('')">// Home</button>
+        <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('home')">// Home</button>
         <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('about')">// About</button>
         <!-- <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('qualification')">Qualification</button> -->
         <button [disableRipple]="true" class="menu-button" [ngClass]="{'anim-light': !darkMode,'anim-dark': darkMode}" mat-button (click)="btnClick('experience')">// Journey</button>
@@ -29,7 +29,7 @@
                 <mat-panel-title class="menu-desc">Menu</mat-panel-title>
             <mat-icon class="hamburger" >toc</mat-icon>
             </mat-expansion-panel-header>
-                <button class="menu-button-collapse" mat-button (click)="panelOpenState = !panelOpenState; btnClick('')">Home</button>
+                <button class="menu-button-collapse" mat-button (click)="panelOpenState = !panelOpenState; btnClick('home')">Home</button>
                 <button class="menu-button-collapse" mat-button (click)="btnClick('about')">About</button>
                 <!-- <button class="menu-button-collapse" mat-button (click)="btnClick('qualification')">Qualification</button> -->
                 <button class="menu-button-collapse" mat-button (click)="btnClick('experience')">Journey</button>

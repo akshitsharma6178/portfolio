@@ -4,14 +4,14 @@
 }
 .about-title{
     font-family: Noto Sans;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     // font-weight: 200;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
     // text-align: center;
-    // color: #000;
+    color: #CA6B54;
     margin: 0px;
     // margin-bottom: 20px;
 }
@@ -37,11 +37,22 @@
     // margin-bottom: 150px;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
+    gap: 5rem;
 }
 .text-sphere{
     z-index: 3;
     // position: absolute;
     background: none;
+    position: relative;
+    width: 800px;
+    // font-weight: bolder;
+    height: 800px;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    /* border: inset 1rem transparent; */
+    color: #CA6B54;
+    box-shadow: 10px 6px 13px #5B3443;
+    // color: #5B3443;
     // height:;
     // width: 10rem;
     // max-width: 15rem;
@@ -54,12 +65,13 @@
     color: #185adb;
 }
 .decorator{
-    width:5rem;
+    width:10rem;
     height:0.5rem;
-    background-color: #d9d9d9;
+    background-color: #CA6B54;
     align-self: flex-start;
     margin: auto;
-    margin-left: 1rem;
+    margin-left: 0rem;
+    margin-block-start: 0.5rem;
 }
 
 .body-emphasis{

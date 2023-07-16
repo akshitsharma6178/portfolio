@@ -55,6 +55,8 @@ export class LanguagesComponent implements OnInit {
   string: string = "Technology Stack"
   darkMode = false;
   currentIndex = 0;
+  currentOrient: boolean = false;
+  isPaused: boolean = false;
 
   // constructor( private darkModeService: DbService) { 
   //   iconRegistry.addSvgIconLiteral('github', sanitizer.bypassSecurityTrustHtml(GITHUB));
@@ -115,6 +117,10 @@ export class LanguagesComponent implements OnInit {
         }
       }  
     })
+    let intervel = setInterval(()=> {
+      if(!this.isMobile() && !this.isPaused)
+        this.currentOrient ? this.nextSet() : this.previousSet()
+    }, 2000)
   }
 
   smallerSize(index: number){
@@ -145,6 +151,7 @@ export class LanguagesComponent implements OnInit {
     if (this.currentIndex < this.languageListShown.length - 1) {
       this.currentIndex++;
     }
+    this.currentOrient = true;
   }
 
 
@@ -167,6 +174,7 @@ export class LanguagesComponent implements OnInit {
     if (this.currentIndex > 0) {
       this.currentIndex--;
     }
+    this.currentOrient = false;
   }
   setAnim(){
     // this.anim = false;

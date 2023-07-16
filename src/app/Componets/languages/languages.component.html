@@ -3,8 +3,8 @@
         <app-livetext [string]="string" class="about-title"></app-livetext>
     </div>
     <div [ngClass]="{'decorator-dark': darkMode, 'decorator-light': !darkMode}"></div>
-    <div class="images">
-        <mat-card  id="{{y}}" (mouseover)="!isMobile()? drawer.toggle(): null" (mouseout)="!isMobile()? drawer.toggle(): null" (click)="isMobile() ? drawer.toggle() : null" class="card" [ngClass]="{'caresol': smallerSize(y), 'last' : lastItem(y), 'second-last': secondLast(y),'shadow': !darkMode}" *ngFor="let i of languageListShown; let y = index">
+    <div (mouseover)="isPaused = true" (mouseout) = "isPaused = false" class="images">
+        <mat-card  id="{{y}}" (mouseover)="!isMobile() ? drawer.toggle() : null" (mouseout)="!isMobile() ? drawer.toggle(): null" (click)="isMobile() ? drawer.toggle() : null" class="card" [ngClass]="{'caresol': smallerSize(y), 'last' : lastItem(y), 'second-last': secondLast(y),'shadow': !darkMode}" *ngFor="let i of languageListShown; let y = index">
             <mat-drawer-container class="sidenav-container" [ngClass]="{'caresol': smallerSize(y)}" autosize>
                 <mat-drawer #drawer class="sidenav" [ngClass]="{'sidenav-dark': darkMode}" mode="side">
                         <p class="lanDesc">
@@ -22,7 +22,7 @@
         </mat-card>
     </div>
     <div class="break"></div>
-    <div class="buton-next-prev">
+    <div (mouseover)="isPaused = true" (mouseout) = "isPaused = false" class="buton-next-prev">
         <div>
             <button class="btn" mat-button (click)="previousSet()"><mat-icon>keyboard_arrow_left</mat-icon></button>
         </div>

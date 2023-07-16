@@ -73,7 +73,6 @@ export class AppComponent implements OnDestroy{
   @HostBinding('class') className ='';
 
   constructor(private contexts:ChildrenOutletContexts, private darkModeService: DbService, private localStorage: LocalStorageService, private renderer: Renderer2){
-    console.log("constructor run")
   }
   getRouteAnimationData(){
     // console.log(this.contexts.getContext('primary'))
@@ -81,7 +80,9 @@ export class AppComponent implements OnDestroy{
     // return 'routeAnimations'
   }
   ngOnInit(): void{
-    console.log("ngONinit run")
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      document.documentElement.style.scrollSnapAlign = "unset"
+    }
     this.subscription = this.darkModeService.getValue().subscribe(x =>{
       const darkClassName = 'darkMode';
       if(this.localStorage.getMode() == "dark"){
